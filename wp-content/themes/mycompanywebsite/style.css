@@ -1,0 +1,629 @@
+/*
+Theme Name: my company website
+Theme URI: http://underscores.me/
+Author: Rennie Bevineau
+Author URI: http://renniewebcreations.com
+Description: My website theme
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: mycompanywebsite
+Tags:
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+my company website is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Normalize
+# Typography
+# Elements
+# Forms
+# Navigation
+	## Links
+	## Menus
+# Accessibility
+# Alignments
+# Clearings
+# Widgets
+# Content
+	## Posts and pages
+	## Asides
+	## Comments
+# Infinite scroll
+# Media
+	## Captions
+	## Galleries
+13 User Stylesheet
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Normalize
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Elements
+--------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------
+# Forms
+--------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+## Links
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+## Menus
+--------------------------------------------------------------*/
+
+
+/* Small menu. */
+.menu-toggle,
+.main-navigation.toggled ul {
+	display: block;
+}
+
+@media screen and (min-width: 37.5em) {
+	.menu-toggle {
+		display: none;
+	}
+	.main-navigation ul {
+		display: block;
+	}
+}
+
+.site-main .comment-navigation,
+.site-main .posts-navigation,
+.site-main .post-navigation {
+	margin: 0 0 1.5em;
+	overflow: hidden;
+}
+
+.comment-navigation .nav-previous,
+.posts-navigation .nav-previous,
+.post-navigation .nav-previous {
+	float: left;
+	width: 50%;
+}
+
+.comment-navigation .nav-next,
+.posts-navigation .nav-next,
+.post-navigation .nav-next {
+	float: right;
+	text-align: right;
+	width: 50%;
+}
+
+/*--------------------------------------------------------------
+# Accessibility
+--------------------------------------------------------------*/
+/* Text meant only for screen readers. */
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+}
+
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	color: #21759b;
+	display: block;
+	font-size: 14px;
+	font-size: 0.875rem;
+	font-weight: bold;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000; /* Above WP toolbar. */
+}
+
+/* Do not show the outline on the skip link target. */
+#content[tabindex="-1"]:focus {
+	outline: 0;
+}
+
+/*--------------------------------------------------------------
+# Alignments
+--------------------------------------------------------------*/
+.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 1.5em;
+}
+
+.alignright {
+	display: inline;
+	float: right;
+	margin-left: 1.5em;
+}
+
+.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/*--------------------------------------------------------------
+# Clearings
+--------------------------------------------------------------*/
+.clear:before,
+.clear:after,
+.entry-content:before,
+.entry-content:after,
+.comment-content:before,
+.comment-content:after,
+.site-header:before,
+.site-header:after,
+.site-content:before,
+.site-content:after,
+.site-footer:before,
+.site-footer:after {
+	content: "";
+	display: table;
+	table-layout: fixed;
+}
+
+.clear:after,
+.entry-content:after,
+.comment-content:after,
+.site-header:after,
+.site-content:after,
+.site-footer:after {
+	clear: both;
+}
+
+/*--------------------------------------------------------------
+# Widgets
+--------------------------------------------------------------*/
+.widget {
+	margin: 0 0 1.5em;
+}
+
+/* Make sure select elements fit in widgets. */
+.widget select {
+	max-width: 100%;
+}
+
+/*--------------------------------------------------------------
+# Content
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+## Posts and pages
+--------------------------------------------------------------*/
+.sticky {
+	display: block;
+}
+
+.hentry {
+	margin: 0 0 1.5em;
+}
+
+.byline,
+.updated:not(.published) {
+	display: none;
+}
+
+.single .byline,
+.group-blog .byline {
+	display: inline;
+}
+
+.page-content,
+.entry-content,
+.entry-summary {
+	margin: 1.5em 0 0;
+}
+
+.page-links {
+	clear: both;
+	margin: 0 0 1.5em;
+}
+
+/*--------------------------------------------------------------
+## Asides
+--------------------------------------------------------------*/
+.blog .format-aside .entry-title,
+.archive .format-aside .entry-title {
+	display: none;
+}
+
+/*--------------------------------------------------------------
+## Comments
+--------------------------------------------------------------*/
+.comment-content a {
+	word-wrap: break-word;
+}
+
+.bypostauthor {
+	display: block;
+}
+
+/*--------------------------------------------------------------
+# Infinite scroll
+--------------------------------------------------------------*/
+/* Globally hidden elements when Infinite Scroll is supported and in use. */
+.infinite-scroll .posts-navigation, /* Older / Newer Posts Navigation (always hidden) */
+.infinite-scroll.neverending .site-footer { /* Theme Footer (when set to scrolling) */
+	display: none;
+}
+
+/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */
+.infinity-end.neverending .site-footer {
+	display: block;
+}
+
+/*--------------------------------------------------------------
+# Media
+--------------------------------------------------------------*/
+.page-content .wp-smiley,
+.entry-content .wp-smiley,
+.comment-content .wp-smiley {
+	border: none;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding: 0;
+}
+
+/* Make sure embeds and iframes fit their containers. */
+embed,
+iframe,
+object {
+	max-width: 100%;
+}
+
+/*--------------------------------------------------------------
+## Captions
+--------------------------------------------------------------*/
+.wp-caption {
+	margin-bottom: 1.5em;
+	max-width: 100%;
+}
+
+.wp-caption img[class*="wp-image-"] {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-caption .wp-caption-text {
+	margin: 0.8075em 0;
+}
+
+.wp-caption-text {
+	text-align: center;
+}
+
+/*--------------------------------------------------------------
+## Galleries
+--------------------------------------------------------------*/
+.gallery {
+	margin-bottom: 1.5em;
+}
+
+.gallery-item {
+	display: inline-block;
+	text-align: center;
+	vertical-align: top;
+	width: 100%;
+}
+
+.gallery-columns-2 .gallery-item {
+	max-width: 50%;
+}
+
+.gallery-columns-3 .gallery-item {
+	max-width: 33.33%;
+}
+
+.gallery-columns-4 .gallery-item {
+	max-width: 25%;
+}
+
+.gallery-columns-5 .gallery-item {
+	max-width: 20%;
+}
+
+.gallery-columns-6 .gallery-item {
+	max-width: 16.66%;
+}
+
+.gallery-columns-7 .gallery-item {
+	max-width: 14.28%;
+}
+
+.gallery-columns-8 .gallery-item {
+	max-width: 12.5%;
+}
+
+.gallery-columns-9 .gallery-item {
+	max-width: 11.11%;
+}
+
+.gallery-caption {
+	display: block;
+}
+
+
+/* --------------------------------------
+   13.0 Theme Specific Styles
+   -------------------------------------- */
+body {
+	margin-top: 50px;
+}
+
+.bottom {
+	margin-bottom: 80px;
+}
+.logged-in .navbar-fixed-top {
+
+	top: 32px;
+}
+
+.hero-spacer {
+    margin-top: 50px;
+}
+
+
+.spacer{
+	margin-top: 5px;
+	margin-bottom: 0px;
+
+
+}
+
+
+.wrap{
+	display: inline;
+
+}
+
+ .medium-text{
+ 	font-size: 3vmin;
+
+ }
+
+.pages-logo{
+	width: 80px;
+    height: 70px;
+    margin-top: 20px;
+}
+
+.panel-body{
+	height: inherit;
+	background-color: #354b59;
+    font-size: 19px;
+    color: #eee;
+}
+
+.panel-default>.panel-heading {
+   background-color: rgba(8, 8, 8, 0.88);
+   color: #eee;
+   border-color: #655A5A;
+}
+
+body{
+font-family: 'Lato', sans-serif;
+word-wrap: break-word;
+line-height: 200%;
+
+}
+
+
+.link{
+	color: #747704;
+}
+
+#my-image {
+    margin-top: 10px;
+}
+
+.pages-title{
+	color: #efefef;
+}
+
+p.lead{
+	font-weight: normal;
+}
+
+.star{
+	font-size: 3.5vw;
+	vertical-align: middle;
+	color: #354b59;
+
+}
+
+.subtitle{
+	font-size: 4vmin;
+}
+
+section.main-content p {
+
+	margin-top: 25px;
+
+}
+
+.tie-photo {
+    margin-top: 20px;
+}
+
+.title2 {
+
+	font-weight: bold;
+	margin-top: 55px;
+	margin-bottom: 20px;
+
+}
+
+.title-logo {
+	width: 100px;
+	height:100px;
+}
+
+.title{
+	font-family: 'Cinzel', serif;
+}
+
+
+.title-super{
+	font-size: 4vmin;
+
+}
+
+.rounded-corners{
+	border-radius: 8px;
+
+}
+
+
+
+hr {
+	height: 4px;
+	background-color: #BCBBBB;
+	margin-top: 6px;
+	margin-bottom: 40px;
+}
+
+.space{
+	margin-top: 0px;
+	font-size: 4vmin;
+}
+
+
+.bg-blue {
+	background-color: #354b59;
+	margin-top: 55px;
+	min-height: 120px;
+}
+
+.bg-blue h2{
+	color: #efefef;
+	display: inline;
+
+}
+
+#content{
+
+margin-top: 65px;
+
+}
+
+.zero-bottom{
+	margin-bottom: 0px;
+}
+
+
+.title-image{
+
+	width: 75vmax;
+}
+
+.feature-image {
+	display: table;
+	width: 100%;
+	padding: 90px;
+
+}
+
+.feature-image h1 {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	color: white;
+	font-size: 3em;
+}
+
+ 	/* ==========================================================================
+   Services
+   ========================================================================== */
+
+   #services .title2 {
+
+   		margin-bottom: 30px;
+
+   }
+
+	.main-content hr{
+		margin-top: 20px;
+	}
+
+   .service {
+   		width: 31.33333333%;
+   		float: left;
+   		margin: 0 3% 40px 0;
+   }
+
+   .service:nth-child(3n) {
+   		margin-right: 0;
+   }
+
+
+
+
+
+@media screen and (max-width: 444px) {
+	.navbar-brand {
+		font-size: .8em;
+	}
+
+	h3,h4{
+		font-size: .9em;
+	}
+
+	.star{ font-size: 8vw;
+	}
+
+}
+
+@media screen and (max-width: 700px) {
+
+
+	.star{
+		font-size: 8vw;
+
+	}
+
+}
+
+
+/* Fix the top margin when logged in */
+@media screen and (max-width: 600px) {
+	.logged-in .navbar-fixed-top {
+		top: 42px;
+	}
+}
+
+/* Fix the top margin when logged in */
+@media screen and (max-width: 782px) {
+	.logged-in .navbar-fixed-top {
+		top: 46px;
+	}
+}
+
