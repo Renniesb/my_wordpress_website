@@ -16,7 +16,7 @@ get_header(); ?>
 	<?php if (has_post_thumbnail()) {//check for feature image ?>
 
 	<section class="feature-image" style="background: url('<?php echo $thumbnail_url; ?>') no-repeat; background-size: cover;" data-type="background" data-speed="2">
-		<h1><?php the_title(); ?></h1>
+		<h1 class="page-title"><?php the_title(); ?></h1>
 	</section>
 
 	<?php } ?>
@@ -29,7 +29,7 @@ get_header(); ?>
 	===================================-->
 	<div class="container" id="services">
 
-		<div class="row" id="primary">
+		<div class="row">
 
 			<div class="col-sm-12">
 

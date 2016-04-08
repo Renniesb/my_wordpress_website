@@ -4,20 +4,22 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
  *
- * @package my_company_website
+ * @package Bootstrap_to_WordPress
  */
 
 get_header(); ?>
 
-	<section id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+	    <section class="feature-image feature-image-default-alt" data-type="background" data-speed="2">
+			<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'bootstrap2wordpress' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+		</section>
+
+		<div class="container">
+			<div id="primary" class="row">
+				<main id="content" class="col-sm-8">
 
 		<?php
 		if ( have_posts() ) : ?>
 
-			<header class="page-header">
-				<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'mycompanywebsite' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
-			</header><!-- .page-header -->
 
 			<?php
 			/* Start the Loop */
@@ -39,10 +41,15 @@ get_header(); ?>
 			get_template_part( 'template-parts/content', 'none' );
 
 		endif; ?>
+		<!--=============================
+		=            Sidebar            =
+		==============================-->
 
 		</main><!-- #main -->
-	</section><!-- #primary -->
+			<aside class="col-sm-4">
+				<?php get_sidebar();?>
+			</aside>
+	</div><!-- primary -->
+</div><!-- container -->
 
-<?php
-get_sidebar();
-get_footer();
+<?php get_footer();

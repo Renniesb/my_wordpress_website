@@ -17,7 +17,7 @@
 <?php $loop = new WP_Query(array('post_type' => 'request_form', 'orderby' => 'post_id' , 'order' => 'ASC'));?>
 
 <?php while ($loop->have_posts()) : $loop->the_post(); ?>
-	<div class="container bottom">
+	<div id="quote" class="container bottom">
 		<div class="row" id="primary">
 			<div class="col-sm-12">
 
@@ -35,9 +35,17 @@
 	</div><!-- container -->
 <?php endwhile; ?>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<div class="container">
+	<div class="row">
+		<div class="col-sm-3">
+			<p> <?php echo bloginfo('name'); ?> &copy; <?php echo date('Y'); ?></p>
+		</div><!-- end col -->
+	</div>
+</div>
+<script type="text/javascript" src="http://www.skypeassets.com/i/scom/js/skype-uri.js"></script>
 <script src="<?php bloginfo('template_directory'); ?>/assets/js/jquery-1.11.1.min.js"></script>
 <script src="<?php bloginfo('template_directory'); ?>/assets/js/bootstrap.min.js"></script>
+<script src="<?php bloginfo('template_directory'); ?>/assets/js/main.js"></script>
 
 
 <?php wp_footer(); ?>

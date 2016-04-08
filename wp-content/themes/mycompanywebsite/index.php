@@ -1,5 +1,7 @@
 <?php
 /**
+
+
  * The main template file.
  *
  * This is the most generic template file in a WordPress theme
@@ -9,16 +11,23 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package my_company_website
+ * @package Bootstrap_to_WordPress
  */
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+<section class="feature-image feature-image-default" data-type="background" data-speed="2">
+	<h1 class="page-title">Blog</h1>
+</section>
 
-		<?php
-		if ( have_posts() ) :
+<!-- BLOG CONTENT
+	================================================== -->
+    <div class="container">
+	    <div class="row" id="primary">
+
+		    <main id="content" class="col-sm-8" role="main">
+		    <?php
+			if ( have_posts() ) :
 
 			if ( is_home() && ! is_front_page() ) : ?>
 				<header>
@@ -40,17 +49,27 @@ get_header(); ?>
 
 			endwhile;
 
-			the_posts_navigation();
+			// the_posts_navigation();
 
-		else :
+			else :
 
 			get_template_part( 'template-parts/content', 'none' );
 
-		endif; ?>
+			endif; ?>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+
+		    </main><!-- content -->
+		    <!-- SIDEBAR
+			================================================== -->
+		    <aside class="col-sm-4">
+
+		    <?php get_sidebar(); ?>
+		    <?php dynamic_sidebar('sidebar-2'); ?>
+
+		    </aside>
+
+		</div><!-- primary -->
+	</div><!-- container -->
 
 <?php
-get_sidebar();
 get_footer();?>

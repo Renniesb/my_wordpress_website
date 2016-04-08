@@ -4,23 +4,29 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package my_company_website
+ * @package Bootstrap_to_WordPress
  */
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+
 
 		<?php
 		if ( have_posts() ) : ?>
+			<section class="feature-image feature-image-default-alt" data-type="background" data-speed="2">
 
-			<header class="page-header">
+				<h1>
 				<?php
-					the_archive_title( '<h1 class="page-title">', '</h1>' );
-					the_archive_description( '<div class="taxonomy-description">', '</div>' );
+					single_tag_title( '<h1 class="page-title">', '</h1>' );
+					the_archive_description( '<small class="taxonomy-description">', '</small>' );
 				?>
-			</header><!-- .page-header -->
+				</h1>
+			</section>
+
+
+				<div class="container">
+					<div id="primary" class="row">
+						<main id="content" class="col-sm-8">
 
 			<?php
 			/* Start the Loop */
@@ -35,7 +41,7 @@ get_header(); ?>
 
 			endwhile;
 
-			the_posts_navigation();
+			//the_posts_navigation();
 
 		else :
 
@@ -43,9 +49,20 @@ get_header(); ?>
 
 		endif; ?>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+		</main>
+
+		<!--=============================
+			=            Sidebar            =
+		==============================-->
+			<div class="col-sm-4">
+			<?php get_sidebar(); ?>
+			</div><!-- end col -->
+
+	</div><!-- primary -->
+</div><!-- container -->
+
+
+
 
 <?php
-get_sidebar();
-get_footer();
+get_footer();?>
